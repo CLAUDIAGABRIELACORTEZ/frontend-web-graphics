@@ -1,6 +1,6 @@
 import { PrivateRoutes } from '@/models/routes.model'
 import { PERMISSION } from '@/modules/auth/utils/permissions.constants'
-import { Building2Icon, BuildingIcon, CalendarClock, DollarSign, FileText, HomeIcon, KeyIcon, PackageIcon, ShoppingCart, Tag, UserCogIcon, UserIcon, UsersIcon } from 'lucide-react'
+import { LibraryBig,School,HomeIcon, KeyIcon, PackageIcon, ShoppingCart, Tag, UserCogIcon, UserIcon, UsersIcon } from 'lucide-react'
 import { createElement } from 'react'
 
 export interface MenuHeaderRoute {
@@ -45,77 +45,44 @@ export const MenuSideBar: MenuHeaderRoute[] = [
     ]
   },
   {
-    label: 'Inventario',
-    icon: createElement(PackageIcon, { width: 20, height: 20 }),
-    path: '/productos',
+    label: 'Facultades',
+    icon: createElement(School, { width: 20, height: 20 }),
+    path: PrivateRoutes.FACULTAD,
     permissions: [PERMISSION.PRODUCT, PERMISSION.PRODUCT_SHOW, PERMISSION.CATEGORY, PERMISSION.CATEGORY_SHOW],
-    children: [
-      {
-        path: PrivateRoutes.PRODUCT,
-        label: 'Productos',
-        icon: createElement(PackageIcon, { width: 20, height: 20 }),
-        permissions: [PERMISSION.PRODUCT, PERMISSION.PRODUCT_SHOW]
-      },
-      {
-        path: PrivateRoutes.CATEGORY,
-        label: 'Categorías',
-        icon: createElement(Tag, { width: 20, height: 20 }),
-        permissions: [PERMISSION.CATEGORY, PERMISSION.CATEGORY_SHOW]
-      },
-      {
-        path: PrivateRoutes.RESERVAS,
-        label: 'Reservas',
-        icon: createElement(CalendarClock, { width: 20, height: 20 }),
-        permissions: [PERMISSION.CATEGORY, PERMISSION.CATEGORY_SHOW]
-      }
-    ]
+    // children: [
+    //   {
+    //     path: PrivateRoutes.PRODUCT,
+    //     label: 'Productos',
+    //     icon: createElement(PackageIcon, { width: 20, height: 20 }),
+    //     permissions: [PERMISSION.PRODUCT, PERMISSION.PRODUCT_SHOW]
+    //   },
+    //   {
+    //     path: PrivateRoutes.CATEGORY,
+    //     label: 'Categorías',
+    //     icon: createElement(Tag, { width: 20, height: 20 }),
+    //     permissions: [PERMISSION.CATEGORY, PERMISSION.CATEGORY_SHOW]
+    //   },
+    //   {
+    //     path: PrivateRoutes.RESERVAS,
+    //     label: 'Reservas',
+    //     icon: createElement(CalendarClock, { width: 20, height: 20 }),
+    //     permissions: [PERMISSION.CATEGORY, PERMISSION.CATEGORY_SHOW]
+    //   }
+    // ]
   },
   {
-    label: 'Pedidos y Órdenes',
-    icon: createElement(ShoppingCart, { width: 20, height: 20 }),
-    path: '/pedidos',
+    label: 'Carreras',
+    icon: createElement(LibraryBig, { width: 20, height: 20 }),
+    path: '/pedidos/PrivateRoutes.PURCHASE_ORDER',
     permissions: [PERMISSION.PURCHASE_ORDER, PERMISSION.PURCHASE_ORDER_SHOW],
-    children: [
-      {
-        path: PrivateRoutes.PURCHASE_ORDER,
-        label: 'Ordenes',
-        icon: createElement(ShoppingCart, { width: 20, height: 20 }),
-        permissions: [PERMISSION.PURCHASE_ORDER, PERMISSION.PURCHASE_ORDER_SHOW]
-      }
-    ]
+    // children: [
+    //   {
+    //     path: PrivateRoutes.PURCHASE_ORDER,
+    //     label: 'Ordenes',
+    //     icon: createElement(ShoppingCart, { width: 20, height: 20 }),
+    //     permissions: [PERMISSION.PURCHASE_ORDER, PERMISSION.PURCHASE_ORDER_SHOW]
+    //   }
+    // ]
   },
-  {
-    label: 'Administracion',
-    icon: createElement(Building2Icon, { width: 20, height: 20 }),
-    path: '/sucursales',
-    permissions: [PERMISSION.BRANCH, PERMISSION.BRANCH_SHOW],
-    children: [
-      {
-        path: PrivateRoutes.BRANCH,
-        label: 'Sucursales',
-        icon: createElement(BuildingIcon, { width: 20, height: 20 }),
-        permissions: [PERMISSION.BRANCH, PERMISSION.BRANCH_SHOW]
-      },
-      {
-        path: PrivateRoutes.SALES,
-        label: 'Ventas',
-        icon: createElement(DollarSign, { width: 20, height: 20 }),
-        permissions: [PERMISSION.BRANCH, PERMISSION.BRANCH_SHOW]
-      }
-    ]
-  },
-  {
-    label: 'Reportes y Análisis',
-    icon: createElement(FileText, { width: 20, height: 20 }),
-    path: '/reportes',
-    permissions: [PERMISSION.REPORTS, PERMISSION.REPORT_SHOW],
-    children: [
-      {
-        path: PrivateRoutes.SALES_REPORT,
-        label: 'Reportes de Ventas',
-        icon: createElement(FileText, { width: 20, height: 20 }),
-        permissions: [PERMISSION.REPORTS, PERMISSION.REPORT_SHOW]
-      }
-    ]
-  }
+ 
 ]

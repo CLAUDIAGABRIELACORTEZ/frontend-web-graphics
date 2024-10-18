@@ -8,6 +8,7 @@ export enum PublicRoutes {
 export enum PrivateRoutes {
   DASHBOARD = '/',
   SETTINGS = '/configuracion',
+  FACULTAD = '/facultades',
   // users
   USER = '/usuarios',
   CLIENTES = PrivateRoutes.USER + '/clientes',
